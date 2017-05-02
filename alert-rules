@@ -7,3 +7,10 @@ ALERT high_load
    summary = "Instance {{ $labels.instance }} under high load",
    description = "{{ $labels.instance }} of job {{ $labels.job }} is under high load.",
 }
+
+ALERT high_disk_usage
+  IF node_directory_size_bytes{directory="/home/alpha"} < 54640929134
+  ANNOTATIONS {
+    summary = "User disk space high",
+    description = "its high",
+}

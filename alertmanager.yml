@@ -11,5 +11,5 @@ receivers:
  - name: team-hipchat
 
 hipchat_config:
- - room-id: 3452990
- - auth_token: 8eCuPNyyHqqJXlye6gi7wQsYZIhIDegXyNHwwF0n  
+ - room-id: inputID
+ - auth_token: inputTOKEN
