@@ -9,10 +9,11 @@ services:
     - ./prometheus_data:/prometheus
    command:
     - '-config.file=/etc/prometheus/prometheus.yml'
-    - '-alertmanager.url=http://127.0.0.1:9093'
+    - '-alertmanager.url=http://alertmanager:9093'
+    - '-log.level=debug'
    ports:
     - '9090:9090'
-  
+
   node-exporter:
    image: prom/node-exporter
    ports:

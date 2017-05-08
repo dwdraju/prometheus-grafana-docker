@@ -1,15 +1,27 @@
 ---
+# route:
+#   group_by: [cluster]
+#   receiver: team-hipchat
+#   routes:
+#     - match:
+#       severity: hipchat
+#       receiver: team-hipchat
+
+# receivers:
+#  - name: team-hipchat
+
+# hipchat_config:
+#  - room-id: inputID
+#  - auth_token: inputTOKEN
+
+
 route:
-  group_by: [cluster]
-  receiver: team-hipchat
-  routes:
-    - match:
-      severity: hipchat
-      receiver: team-hipchat
+  receiver: 'slack'
 
 receivers:
- - name: team-hipchat
-
-hipchat_config:
- - room-id: inputID
- - auth_token: inputTOKEN
+  - name: 'slack'
+    slack_configs:
+      - send_resolved: true
+        username: 'raju'
+        channel: 'prom_monitoring'
+        api_url: 'https://hooks.slack.com/services/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'
