@@ -52,3 +52,12 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     ports:
       - '8080:8080'
+
+  blackbox-exporter:
+    image: prom/blackbox-exporter:latest
+    volumes:
+     - ./blackbox.yml:/config/blackbox.yml
+    command:
+     - '-config.file=/config/blackbox.yml'
+    ports:
+      - '9115:9115'
